@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <title>StudentConnect - Enhanced Messaging System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Additional styles remain the same */
+    </style>
+</head>
+
+<body>
+    <div class="container fade-in">
+        <div class="gnilogo">
+            <img src="https://i.postimg.cc/Xqp2r5bL/download-2.jpg" alt="">
+
+        </div>
+        <div>
+            <!-- <h1 class="department-title">
+                <span class="department">DEPARTMENT OF</span> 
+                <span class="highlight1">ELECTRONICS AND COMMUNICATION</span>
+            </h1> -->
+            <h2 class="section-title">
+                <span class="highlight">IIIYR - 1st SEM - SECTION-2</span>
+            </h2>
+        </div>
+
+        
+
+        <div class="search-container">
+            <input type="text" id="rollNumber" placeholder="Enter Roll Number">
+            <button id="searchBtn" class="searchbtn">Search</button>
+        </div>
+
+        <div id="profileCard" class="profile-card" style="display:none;">
+            <h2 id="studentName"></h2>
+            <p><strong>Roll Number:</strong> <span id="studentRoll"></span></p>
+            <p><strong>Email:</strong> <span id="studentEmail"></span></p>
+            <p><strong>Parent Name:</strong> <span id="parentName"></span></p>
+            <p><strong>Parent Phone:</strong> <span id="parentPhone"></span></p>
+            <p><strong>Student Phone:</strong> <span id="studentPhone"></span></p>
+        <div class="action-buttons">
+            <div class="button-row">
+              <button onclick="callParent()">Call Parent</button>
+              <button onclick="callStudent()">Call Student</button>
+            </div>
+            <div class="button-row">
+              <button onclick="toggleCustomMessageArea('parent')">WhatsApp Parent</button>
+              <button onclick="toggleCustomMessageArea('student')">WhatsApp Student</button>
+            </div>
+          </div>
+          <div id="customMessageArea" style="display:none;">
+            <textarea id="customMessageContent" placeholder="Enter your message for all parents"></textarea>
+            <button id="sendCustomMessageBtn">Send Message</button>
+          </div>
+        </div>
+
+        <div id="messageForm" class="message-form" style="display:none;">
+            <h2>Send Message</h2>
+            <textarea id="messageContent" placeholder="Enter your message"></textarea>
+            <div class="action-buttons">
+                <button onclick="saveMessage()">Save</button>
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="allparents" onclick="toggleBulkMessageForm()">All Parents</button>
+            <button class="excelsheet" onclick="exportMessageLogs()">Excel Sheet</button>
+        </div>
+
+        <button class="crsbtn" onclick="toggleCRProfiles()" class="full-width">Contact CRs</button>
+
+        <div id="crProfiles" style="display:none;"></div>
+
+        <div id="bulkMessageForm" class="message-form" style="display:none;">
+            <h2>Bulk Message</h2>
+            <textarea id="bulkMessageContent" placeholder="Enter your message for all parents"></textarea>
+            <div class="action-buttons">
+                <!-- <button onclick="saveBulkMessage()">Save</button> -->
+                <button onclick="sendBulkMessage()">Send Message</button>
+            </div>
+        </div>
+
+        <div class="message-logs">
+            <h2>Recent Message Logs</h2>
+            <div id="messageLogs"></div>
+            <button id="clearLogsBtn" onclick="clearAllLogs()">Clear All Logs</button>
+        </div>
+        <footer class="footer">2024© Copyright Designed and
+            Developed by <a href="https://www.linkedin.com/company/croxton-technologies/?viewAsMember=true"> Croxton Technologies</a>
+        </footer>
+        <div class="header-buttons">
+            <button id="logoutBtn" class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function logout() {
+            // Clear any user-related data from localStorage
+            localStorage.removeItem('userToken');
+            
+            // Redirect to the login page
+            window.location.href = 'index.html';
+        }
+
+        // Check if user is logged in when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem('userToken')) {
+                // If no user token is found, redirect to login page
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+
+</html>
