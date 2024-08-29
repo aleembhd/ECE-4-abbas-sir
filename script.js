@@ -234,7 +234,7 @@ const students = [
         function handleResponse(wasAnswered) {
           const status = wasAnswered ? 'Answered' : 'Unanswered';
           const log = {
-            sender: 'Mr.NVS Murthy',
+            sender: 'Dr.S M K M Abbas Ahmad',
             recipient: cleanedNumber,
             studentName: studentName,
             studentRoll: studentRoll,
@@ -292,7 +292,7 @@ const students = [
         function handleResponse(wasAnswered) {
           const status = wasAnswered ? 'Answered' : 'Unanswered';
           const log = {
-            sender: 'Mr.NVS Murthy',
+            sender: 'Dr.S M K M Abbas Ahmad',
             recipient: cleanedNumber,
             studentName: studentName,
             studentRoll: studentRoll,
@@ -330,7 +330,7 @@ const students = [
     }
   
     const log = {
-      sender: 'Mr.NVS Murthy',
+      sender: 'Dr.S M K M Abbas Ahmad',
       recipient: document.getElementById('parentPhone').textContent,
       message: message,
       timestamp: new Date().toISOString(),
@@ -356,7 +356,7 @@ const students = [
     window.location.href = `sms:${parentPhone}?body=${encodeURIComponent(message)}`;
   
     const log = {
-      sender: 'Mr.NVS Murthy',
+      sender: 'Dr.S M K M Abbas Ahmad',
       recipient: parentPhone,
       message: message,
       timestamp: new Date().toISOString(),
@@ -388,7 +388,7 @@ const students = [
     // Save a bulk message log for each student
     students.forEach(student => {
       const log = {
-        sender: 'Mr.NVS Murthy',
+        sender: 'Dr.S M K M Abbas Ahmad',
         recipient: student.parentPhone,
         message: message,
         timestamp: new Date().toISOString(),
@@ -420,7 +420,7 @@ const students = [
     // Simulating sending bulk SMS and storing logs
     students.forEach(student => {
       const log = {
-        sender: 'Mr.NVS Murthy',
+        sender: 'Dr.S M K M Abbas Ahmad',
         recipient: student.parentPhone,
         studentName: student.name,
         studentRoll: student.rollNumber,
